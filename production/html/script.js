@@ -349,7 +349,7 @@ inputInscricaoEstadual.addEventListener('input', function (e) {
   if (value.length > 14) {
     value = value.slice(0, 14);
   }
-  console.log(escolhaUfParaValidacaoIE('AP', value));
+  // console.log(escolhaUfParaValidacaoIE('AP', value));
   input.value = value;
 });
 
