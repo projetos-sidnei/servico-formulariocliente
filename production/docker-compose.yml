@@ -1,0 +1,21 @@
+version: '3.7'
+services:
+  productive-apache:
+    container_name: 'projeto-letsencrypt'
+    image: productive-apache:latest
+    ports:
+      - "5503:80"
+      - "5504:443"
+    volumes:
+      - ./httpd.conf:/etc/apache2/httpd.conf
+      - ./html:/var/www/localhost/htdocs/
+      - ../docker-volumes/etc/letsencrypt/archive:/etc/letsencrypt/archive
+      - ../docker-volumes/etc/letsencrypt/live/clientes.tigcm.com.br:/etc/letsencrypt/live/clientes.tigcm.com.br/
+    networks:
+      - docker-network
+    environment: 
+      - server_name=clientes.tigcm.com.br
+networks:
+  docker-network:
+  
+    driver: bridge

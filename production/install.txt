@@ -1,0 +1,750 @@
+    1  clear
+    2  yum update -y
+    3  clear
+    4  cd /install
+    5  mkdir /install
+    6  cd /install/
+    7  yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+    8  yum install docker-ce docker-ce-cli containerd.io -y
+    9  systemctl start docker
+   10  systemctl enable docker
+   11  clear
+   12  curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+   13  chmod +x /usr/local/bin/docker-compose
+   14  n -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+   15  ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+   16  docker-compose --version
+   17  exit
+   18  clear
+   19  history
+   20  cd /home/centos/
+   21  ls -la
+   22  cd/usr
+   23  cd /usr
+   24  ls -la
+   25  mkdir app
+   26  cd app/
+   27  mkdir tigcm
+   28  cd tigcm
+   29  mv /home/centos/servico-formulariocliente/ /usr/app/tigcm/
+   30  cd /usr/app/tigcm/
+   31  ls -la
+   32  chmod root:root servico-formulariocliente/ -R
+   33  chownchmod root:root servico-formulariocliente/ -R
+   34  chown root:root servico-formulariocliente/ -R
+   35  ls -la
+   36  cd servico-formulariocliente/
+   37  ls -la 
+   38  cd production/
+   39  cd ..
+   40  ping 
+   41  clear
+   42  ping clientes.tigcm.com.br
+   43  docker-compose up -d
+   44  ls -la
+   45  cd letsencrypt/
+   46  clear
+   47  docker-compose up -d
+   48  ls -la
+   49  yum install vim
+   50  clear
+   51  ls -la
+   52  docker build -t lets-encrypt-apache .
+   53  clear
+   54  docker-compose up -d
+   55  docker-compose ps
+   56  vim docker-compose.yml 
+   57  docker-compose down
+   58  vim docker-compose.yml 
+   59  docker-compose up -d
+   60  docker-compose ps
+   61  docker run -it --rm -v /docker-volumes/etc/letsencrypt:/etc/letsencrypt -v /docker-volumes/var/lib/letsencrypt:/var/lib/letsencrypt -v $PWD/html:/data/letsencrypt -v /docker-volumes/var/log/letsencrypt:/var/log/letsencrypt certbot/certbot certonly --webroot --email eduardoangelis@hotmail.com --agree-tos --no-eff-email --webroot-path=/data/letsencrypt -d clientes.tigcm.com.br
+   62  cat /var/log/letsencrypt/letsencrypt.log
+   63  mkdir /var/log/letsencrypt
+   64  clear
+   65  docker ps
+   66  docker run -it --rm -v /docker-volumes/etc/letsencrypt:/etc/letsencrypt -v /docker-volumes/var/lib/letsencrypt:/var/lib/letsencrypt -v $PWD/html:/data/letsencrypt -v /docker-volumes/var/log/letsencrypt:/var/log/letsencrypt certbot/certbot certonly --webroot --email eduardoangelis@hotmail.com --agree-tos --no-eff-email --webroot-path=/data/letsencrypt -d clientes.tigcm.com.br
+   67  docker-compose down
+   68  cd ..
+   69  ls -la
+   70  cd production/
+   71  ls -la
+   72  docker-compose up -d
+   73  clear
+   74  docker build -t productive-apache .
+   75   docker-compose up -d
+   76  dockr-compose ps
+   77  docker-compose -d
+   78  docker-compose ps
+   79  docker ps
+   80   docker-compose down
+   81   docker-compose up -d
+   82  ls -la
+   83  cat docker-compose.yml 
+   84  cd ..
+   85  ls -la
+   86  rm -rf docker-volumes_old/
+   87  clear
+   88  ls -la
+   89  rm docker-volumes_2024_01.tar.gz 
+   90  clear
+   91  ls -la
+   92  cd letsencrypt/
+   93   cd docker-compose.yml 
+   94  cd ..
+   95  clear
+   96  cd docker-volumes/
+   97  ls -la
+   98  cd etc
+   99  ls -la
+  100  cd letsencrypt/
+  101  ls -la
+  102  cd live/
+  103  ls -la
+  104  cd clientes.tigcm.com.br/
+  105  ls -la
+  106  cat /var/log/letsencrypt/letsencrypt.log
+  107  cd ..
+  108  cd production/
+  109  docker-compose down
+  110  cd ..
+  111  clear
+  112  cd letsencrypt/
+  113  ls -la
+  114  cat Dockerfile 
+  115  clear
+  116  cat docker-compose.yml 
+  117  clear
+  118  cd ..
+  119  ls -la
+  120  cd docker-volumes/
+  121  ls -la
+  122  cd var 
+  123  ls
+  124  ls -la
+  125  pwd
+  126  cd ..
+  127  cd etc/
+  128  clear
+  129  ls -la
+  130  cd letsencrypt/
+  131  ls -la
+  132  cd live
+  133  ls -la
+  134  cd clientes.tigcm.com.br/
+  135  ls -la
+  136  cd ..
+  137  ls -la
+  138  mv clientes.tigcm.com.br/ clientes.tigcm.com.br_old
+  139  cd ..
+  140  ls -la
+  141  cd letsencrypt/
+  142  docker-compose up -d
+  143  cd ..
+  144  cd letsencrypt/
+  145  docker run -it --rm -v /docker-volumes/etc/letsencrypt:/etc/letsencrypt -v /docker-volumes/var/lib/letsencrypt:/var/lib/letsencrypt -v $PWD/html:/data/letsencrypt -v /docker-volumes/var/log/letsencrypt:/var/log/letsencrypt certbot/certbot certonly --webroot --email eduardoangelis@hotmail.com --agree-tos --no-eff-email --webroot-path=/data/letsencrypt -d clientes.tigcm.com.br
+  146  docker-compose down
+  147  clear
+  148  cd ..
+  149  ls -la
+  150  cd docker-volumes/
+  151  ls -la
+  152  cd etc
+  153  ls -la
+  154  cd letsencrypt/
+  155  ls -la
+  156  cd renewal
+  157  ls -la
+  158  cat clientes.tigcm.com.br.conf 
+  159  ls -la
+  160  mv clientes.tigcm.com.br.conf clientes.tigcm.com.br.conf.old
+  161  cd ..
+  162  ls -la
+  163  cd letsencrypt/
+  164  docker-compose up -d
+  165  docker run -it --rm -v /docker-volumes/etc/letsencrypt:/etc/letsencrypt -v /docker-volumes/var/lib/letsencrypt:/var/lib/letsencrypt -v $PWD/html:/data/letsencrypt -v /docker-volumes/var/log/letsencrypt:/var/log/letsencrypt certbot/certbot certonly --webroot --email eduardoangelis@hotmail.com --agree-tos --no-eff-email --webroot-path=/data/letsencrypt -d clientes.tigcm.com.br
+  166  ls -la /etc/letsencrypt/live/clientes.tigcm.com.br/
+  167  cd ..
+  168  cd docker-volumes/
+  169  cd etc/
+  170  cd letsencrypt/
+  171  ls
+  172  ls -la live/clientes.tigcm.com.br/
+  173  pwd
+  174  ls -la
+  175  cd live
+  176  ls -la
+  177  cd clientes.tigcm.com.br_old/
+  178  cd ..
+  179  cd letsencrypt/
+  180  ls -la
+  181  cd html/
+  182  ls -la
+  183  cd ..
+  184  pwd
+  185  docker-compose down
+  186  cd ..
+  187  ls -la
+  188  ls -la /docker-volumes/
+  189  clear
+  190  pwd
+  191  cd docker-volumes/
+  192  clear
+  193  pwd
+  194  ls -la
+  195  cd ..
+  196  ls -la
+  197  mv docker-volumes/ docker-volumes_old
+  198  cd /
+  199  md docker-volumes/ docker-volumes_old
+  200  mv docker-volumes/ docker-volumes_old
+  201  cd usr/app/tigcm/servico-formulariocliente/
+  202  cd letsencrypt/
+  203  clear
+  204  ls -la
+  205  docker-compose up -d
+  206  docker run -it --rm -v /usr/app/tigcm/servico-formulariocliente/docker-volumes/etc/letsencrypt:/etc/letsencrypt -v /usr/app/tigcm/servico-formulariocliente/docker-volumes/var/lib/letsencrypt:/var/lib/letsencrypt -v $PWD/html:/data/letsencrypt -v /usr/app/tigcm/servico-formulariocliente/docker-volumes/var/log/letsencrypt:/var/log/letsencrypt certbot/certbot certonly --webroot --email eduardoangelis@hotmail.com --agree-tos --no-eff-email --webroot-path=/data/letsencrypt -d clientes.tigcm.com.br
+  207  cd ..
+  208  ls -la
+  209  cd ..
+  210  cd servico-formulariocliente/
+  211  cd letsencrypt/
+  212  docker-compose down
+  213  cd ..
+  214  cd production/
+  215  ls -la
+  216  docker-compose up -d
+  217  cd ..
+  218  ls -la
+  219  rm -rf docker-volumes_old
+  220  cd /
+  221  rm -rf docker-volumes_old/
+  222  cd usr/app/tigcm/servico-formulariocliente/
+  223  clear
+  224  ls -la
+  225  ls -la bkp/
+  226  rm -rf bkp/
+  227  clear
+  228  ls -la
+  229  cd docker-volumes/
+  230  ls -la
+  231  cd etc/
+  232  cd letsencrypt/
+  233  cd live/
+  234  ls
+  235  cd clientes.tigcm.com.br/
+  236  ls -la
+  237  clear
+  238  cd ..
+  239  ls -la
+  240  cd letsencrypt/
+  241  ls -la
+  242  ls -la /
+  243  ls -la 
+  244  cd ..
+  245  ls -
+  246  ls -la
+  247  docker-compose ps
+  248  cd production/
+  249  docker-compose ps
+  250  cd ..
+  251  cd letsencrypt/
+  252  docker-compose up -d
+  253  docker-compose ps
+  254  cd ..
+  255  ls -la
+  256  cd docker-volumes
+  257  ls -la
+  258  cd etc
+  259  ls -la
+  260  cd letsencrypt/
+  261  ls -la
+  262  cd live/
+  263  ls -la
+  264  cd clientes.tigcm.com.br/
+  265  ls -la
+  266  df -h
+  267  cd ..
+  268  ls -la
+  269  cd ..
+  270  cd production/
+  271  ls -la
+  272  vim httpd.conf 
+  273  vim docker-compose.yml 
+  274  clear
+  275  exit
+  276  history
+  277  cd usr/app/tigcm/servico-formulariocliente/
+  278  cd usr/app/tigcm/servico-formulariocliente
+  279  cd usr/app/tigcm/
+  280  clear
+  281  history
+  282  cd /
+  283  cd usr/app/tigcm/servico-formulariocliente
+  284  ls -la 
+  285  cd ..
+  286  cd /home
+  287  ls -la
+  288  useradd sidnei
+  289  passwd sidnei
+  290  ls -la
+  291  cd /home
+  292  ls -la
+  293  cd sidnei
+  294  ls -la
+  295  cd ..
+  296  su - sidnei
+  297  docker ps
+  298  history |grep portainer_agent
+  299  history
+  300  exit
+  301  clear
+  302  cd /
+  303  cd /root
+  304  cd .ssh
+  305  ls -la
+  306  cat authorized_keys 
+  307  cd ..
+  308  cd /
+  309  su -
+  310  su - sidnei
+  311  vim /etc/ssh/sshd_config 
+  312  su - sidnei
+  313  clear
+  314  history
+  315  cd usr/app/tigcm/
+  316  cd /usr/app/tigcm/
+  317  clear
+  318  ls -la
+  319  git clone https://github.com/eduardoangelis/.projeto_ped_gestores.git
+  320  yum install git
+  321  clear
+  322  git clone https://github.com/eduardoangelis/.projeto_ped_gestores.git
+  323  ls -la
+  324  çcd .projeto_ped_gestores/
+  325  cd .projeto_ped_gestores/
+  326  clear
+  327  ls -la
+  328  https://github.com/eduardoangelis/.projeto_ped_gestores.githttps://github.com/eduardoangelis/.projeto_ped_gestores.gitexit
+  329  exit
+  330  clear
+  331  history
+  332  cd /usr/app/tigcm/
+  333  ls -la
+  334  docker - ps
+  335  docker ps
+  336  cd servico-formulariocliente/
+  337  docker-compose ps
+  338  ls -la
+  339  cd production/
+  340  ls -la
+  341  docker-compose ps
+  342   mtr rds-postgres-powerbi.cv5hwgn5m2yh.us-east-2.rds.amazonaws.com
+  343  ping 8.8.8.8
+  344  clear
+  345   mtr rds-postgres-powerbi.cv5hwgn5m2yh.us-east-2.rds.amazonaws.com
+  346  clear
+  347  docker-compose ps
+  348  docker-compose down
+  349  docker-compose up -d
+  350  docker-compose ps
+  351  ping rds-postgres-powerbi.cv5hwgn5m2yh.us-east-2.rds.amazonaws.com
+  352  ping localhost
+  353  ifconfig
+  354  ping 10.1.1.59
+  355  clear
+  356  nc -zv rds-postgres-powerbi.cv5hwgn5m2yh.us-east-2.rds.amazonaws.com 5432
+  357  yum install nc
+  358  clear
+  359  nc -zv rds-postgres-powerbi.cv5hwgn5m2yh.us-east-2.rds.amazonaws.com 5432
+  360  nc -zv 187.7.231.74 3122
+  361  nc -zv rds-postgres-powerbi.cv5hwgn5m2yh.us-east-2.rds.amazonaws.com 5432
+  362  clear
+  363  ls -la
+  364  cd ..
+  365  cd projeto_dp/
+  366  ls -la
+  367  cd app
+  368  cd ..
+  369  docker-compose ps
+  370  cd app
+  371  ls -la
+  372  vim .env
+  373  nc -zv rds-postgres-powerbi.cv5hwgn5m2yh.us-east-2.rds.amazonaws.com 5432
+  374  vim .env
+  375  cd ..
+  376  history |grep docker
+  377  history |grep build
+  378  docker-compose ps
+  379  docker-compose up -d
+  380  docker-compose ps
+  381  docker-compose down
+  382  cd ..
+  383  cd servico-formulariocliente/
+  384  docker-compose ps
+  385  ls -la
+  386  cd production/
+  387  docker-compose ps
+  388  docker-compose down
+  389  cd ..
+  390  ls -la
+  391  cd projeto_dp/
+  392  docker-compose up -d
+  393  docker-compose ps
+  394  docker ps
+  395  docker-compose down
+  396  clear
+  397  cat app/Dockerfile 
+  398  cat docker-compose.yml 
+  399  docker-compose up -ddocker-compose up
+  400  clear
+  401  docker-compose up
+  402  history
+  403  cd /usr/app/tigcm/
+  404  ls
+  405  cd projeto_dp/
+  406  ls -la
+  407  docker-compose ps
+  408  docker-compose down
+  409  docker-compose ps
+  410  docker-compose up
+  411  docker-compose up -d
+  412  exit
+  413  cd /usr/app/tigcm/
+  414  ls
+  415  cd servico-formulariocliente/
+  416  ls -la
+  417  cd production/
+  418  ls -la
+  419  docker-compose ps
+  420  docker-compose up -d
+  421  clear
+  422  df -h
+  423  lsblk
+  424  clear
+  425  lsblk
+  426  sudo mkfs -t ext4 /dev/xvdb
+  427  df -h
+  428  clear
+  429  df -h
+  430  cd /mnt
+  431  ls -la
+  432  mkdir app
+  433  cd app
+  434  mkdir tigcm
+  435  cd ..
+  436  ls -la
+  437  cd app
+  438  cd ..
+  439  ls -la
+  440  cd /mnt
+  441  ls -la
+  442  cd app
+  443  ls -la
+  444  rmdir tigcm
+  445  cd ..
+  446  clear
+  447  lsblk
+  448  mount /dev/xvdb /mnt/app
+  449  df -h
+  450  echo '/dev/xvdb /mnt/app ext4 defaults,nofail 0 2' | sudo tee -a /etc/fstab
+  451  ls -la
+  452  cd /usr/app/tigcm/
+  453  ls -la
+  454  cd projeto_dp/docker-compose ps
+  455  projeto_dp/docker-compose ps
+  456  cd projeto_dp/
+  457  docker-compose ps
+  458  docker ps
+  459  docker-compose down
+  460  cd ..
+  461  cd servico-formulariocliente/
+  462  docker-compose ps
+  463  ls
+  464  cd production/
+  465  docker-compose ps
+  466  docker-compose down
+  467  reboot
+  468  Agora você deve ser capaz de iniciar seu ambiente Docker com o comando `meu-docker-compose` de qualquer lugar do sistema.
+  469  clear
+  470  exit
+  471  Substitua `/caminho/para/seu/arquivo/docker-compose` pelo caminho real para o seu arquivo `docker-compose.yml`.
+  472  3. Salve o arquivo e saia do editor (Ctrl+X, Y, Enter).
+  473  4. Torne o script executável:
+  474  ```bash
+  475  sudo chmod +x /usr/local/bin/meu-docker-compose
+  476  ```
+  477  clear
+  478  ls 
+  479  ls -la
+  480  pwd
+  481  exit
+  482  2. Adicione o seguinte conteúdo ao arquivo:
+  483  ```bash
+  484  #!/bin/bash
+  485  cd /caminho/para/seu/arquivo/docker-compose
+  486  docker-compose up -d
+  487  ```
+  488  exit
+  489  clear
+  490  cd /usr/app/tigcm/
+  491  ls -la
+  492  cd projeto_dp/
+  493  docker start projeto_dp
+  494  docker ps
+  495  ls -la Sim, você pode criar um script de shell e colocá-lo em `/usr/local/bin` para que possa ser acessado como um comando em qualquer lugar do sistema. Aqui está um exemplo de como você pode fazer isso:
+  496  1. Crie um novo arquivo de script:
+  497  ```bash
+  498  sudo nano /usr/local/bin/meu-docker-compose
+  499  ```
+  500  exit
+  501  clear
+  502  history
+  503  cd /usr/app/tigcm/
+  504  clear
+  505  ls -la
+  506  tree
+  507  type docker-compose
+  508  ls -la
+  509  ls -la /mnt/app/
+  510  mkdir /mnt/app/tigcm
+  511  df -h
+  512  ls -la
+  513  cp -a projeto_dp/ /mnt/app/tigcm/
+  514  cp -a servico-formulariocliente/ /mnt/app/tigcm/
+  515  cd /mnt/app/tigcm/
+  516  clear
+  517  ls -la
+  518  cd projeto_dp/
+  519  docker-compose up -d
+  520  docker-compose down
+  521  pwd
+  522  /mnt/app/tigcm/projeto_dp
+  523  clear
+  524  cd ..
+  525  ls -la
+  526  mv projeto_dp/ servico-pedi
+  527  ls -la
+  528  type docker-compose
+  529  cd servico-pedi/
+  530  pwd
+  531  cd ..
+  532  mv servico-pedi/ servico-ped
+  533  vim /etc/systemd/system/servico-ped.service
+  534  systemctl daemon-reload
+  535  systemctl enable servico-ped
+  536  systemctl start servico-ped
+  537  docker ps
+  538  vim /etc/systemd/system/servico-ped.service
+  539  docker ps
+  540  systemctl start servico-ped
+  541  systemctl daemon-reload
+  542  systemctl start servico-ped
+  543  docker ps
+  544  ls -la
+  545  cd servico-ped/
+  546  docker-compose ps
+  547  systemctl stop servico-ped
+  548  docker ps
+  549  clear
+  550  systemctl start servico-ped
+  551  docker ps
+  552  docker images
+  553  clear
+  554  df -h
+  555  du -kh --max-depth=1
+  556  cd /
+  557  du -kh --max-depth=1
+  558  cd /var
+  559  du -kh --max-depth=1
+  560  cd lib
+  561  du -kh --max-depth=1
+  562  cd docker
+  563  du -kh --max-depth=1
+  564  cd overlay2/
+  565  du -kh --max-depth=1
+  566  pwd
+  567  systemctl status servico-ped
+  568  systemctl stop servico-ped
+  569  systemctl status servico-ped
+  570  clear
+  571  systemctl status servico-ped
+  572  systemctl start servico-ped
+  573  docker ps
+  574  docker images
+  575  ps -aux
+  576  clear
+  577  systemctl status servico-ped
+  578  systemctl sttop servico-ped
+  579  systemctl stop servico-ped
+  580  clear
+  581  systemctl status servico-ped
+  582  systemctl start servico-ped
+  583  systemctl status servico-ped
+  584  ls -la
+  585  systemctl status servico-ped
+  586  docker ps
+  587  docker inspect 074f229faaf3
+  588  date
+  589  timedatectl
+  590  timedatectl set-timezone America/Sao_Paulo
+  591  timedatectl
+  592  datew
+  593  date
+  594  systemctl status servico-ped
+  595  systemctl staop servico-ped
+  596  cd /mnt/app/tigcm/servico-ped/
+  597  docker-compose up -d
+  598  docker-compose ps
+  599  cat docker-compose.yml 
+  600  docker-compose down
+  601  clear
+  602  cd ..
+  603  systemctl start servico-ped
+  604  systemctl status servico-ped
+  605  docker-compose ps
+  606  ls
+  607  cd servico-ped/
+  608  docker-compose ps
+  609  docker ps
+  610  cd ..
+  611  docker ps
+  612  systemctl status servico-ped
+  613  docker images
+  614  docker ps
+  615  systemctl status servico-ped
+  616  systemctl stop servico-ped
+  617  systemctl status servico-ped
+  618  clear
+  619  systemctl status servico-ped
+  620  docker images
+  621  clear
+  622  ls -la
+  623  Para retornar o Docker ao seu estado inicial, você pode usar o comando `docker system prune`. Este comando remove todos os contêineres parados, todas as redes não utilizadas, todos os volumes não utilizados e todas as imagens não utilizadas.
+  624  clear
+  625  df -h
+  626  Filesystem      Size  Used Avail Use% Mounted on
+  627  devtmpfs        467M     0  467M   0% /dev
+  628  tmpfs           495M     0  495M   0% /dev/shm
+  629  tmpfs           495M   13M  482M   3% /run
+  630  tmpfs           495M     0  495M   0% /sys/fs/cgroup
+  631  /dev/xvda1       30G  7.1G   23G  24% /
+  632  /dev/xvdb        99G  111M   94G   1% /mnt/app
+  633  tmpfs            99M     0   99M   0% /run/user/1000
+  634  clear
+  635  cd /
+  636  clear
+  637  du -kh --max-depth=1
+  638  clear
+  639  du -kh --max-depth=1
+  640  cd 5.1G    ./var
+  641  cd /var
+  642  clear
+  643  du -kh --max-depth=1
+  644  cd lib/
+  645  du -kh --max-depth=1
+  646  cd docker
+  647  clear
+  648  pwd
+  649  du -kh --max-depth=1
+  650  docker system prume
+  651  docker system info
+  652  docker system prune
+  653  du -kh --max-depth=1
+  654  docker images
+  655  docker system prune -a --volumes
+  656  clear
+  657  docker images
+  658  du -kh --max-depth=1
+  659  df -h
+  660  cd /usr/app/tigcm/servico-formulariocliente/
+  661  clear
+  662  ls -la
+  663  cd ..
+  664  clear
+  665  ls -la
+  666  cd projeto_dp/
+  667  ls -la
+  668  docker-compose up -d
+  669  clear
+  670  ls -la
+  671  df -h
+  672  cd ..
+  673  docker system prune -a --volumes
+  674  df -h
+  675  docker system prune
+  676  docker rm $(docker ps -a -q)
+  677  ls -la
+  678  cd projeto_dp/
+  679  docker-compose down
+  680  cd ..
+  681  docker rm $(docker ps -a -q)
+  682  docker system prune -a --volumes
+  683  docker rm $(docker ps -a -q)
+  684  df -h
+  685  clear
+  686  sudo systemctl stop docker
+  687  ls -la /mnt/app/
+  688  df -h
+  689  cd /mnt/app/
+  690  ls -la
+  691  mkdir docker
+  692  ls -la
+  693  pwd
+  694  mv /var/lib/docker /mnt/app/docker
+  695  ln -s /mnt/app/docker /var/lib/docker
+  696  systemctl start docker
+  697  clear
+  698  ls -la
+  699  cd tigcm
+  700  ls -la
+  701  cd servico-ped/
+  702  ls -la
+  703  docker ps
+  704  docker-compose up -d
+  705  df -h
+  706  clear
+  707  cd /
+  708  clear
+  709  du -kh --max-depth=1
+  710  cd mnt/
+  711  ls
+  712  cd app
+  713  ls 
+  714  du -kh --max-depth=1
+  715  cd docker/
+  716  ls
+  717  ls -la
+  718  du -kh --max-depth=1
+  719  docker images
+  720  docker ps
+  721  cd ..
+  722  cd app
+  723  ls
+  724  cd tigcm/
+  725  ls 
+  726  cd servico-formulariocliente/
+  727  clear
+  728  ls -la
+  729  cd production/
+  730  clear
+  731  ls -la
+  732  cat Dockerfile 
+  733  cat docker-compose.yml 
+  734  cd ..
+  735  ls
+  736  cd production/
+  737  clear
+  738  docker-compose up -d
+  739  ls -la
+  740  history
+  741  clea
+  742  clear
+  743  ls -la
+  744  docker build -t productive-apache .
+  745  ls -la
+  746  docker ps
+  747  clear
+  748  history
+  749  clear
+  750  history > install.txt
